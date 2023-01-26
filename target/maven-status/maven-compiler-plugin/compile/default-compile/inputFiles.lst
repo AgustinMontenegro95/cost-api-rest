@@ -1,0 +1,16 @@
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\dto\PagoDto.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\RapipagoApplication.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\repositories\ReceiveAndSendRepository.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\models\ReceiveAndSend.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\service\ReceiveAndSendServiceImpl.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\dto\ClienteDto.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\service\ReceiveAndSendService.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\dto\ReversaDto.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\security\SecurityConfig.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\dto\ConsultaDto.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\validations\Validation.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\service\EntidadServiceImpl.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\service\EntidadService.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\repositories\EntidadRepository.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\controller\RapipagoController.java
+D:\VS code\rapipago\src\main\java\ar\com\dinamicaonline\rapipago\models\Entidad.java
