@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ar.com.dinamicaonline</groupId>
-	<artifactId>rapipago</artifactId>
+	<artifactId>cost_api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rapipago</name>
-	<description>Demo project for Spring Boot</description>
+	<name>cost-api</name>
+	<description>Project for costs of DINÁMICA</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

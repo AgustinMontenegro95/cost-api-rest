@@ -8,8 +8,44 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "api_ExtractionPlaces")
+@SqlResultSetMapping(name = "depositMoneyDTOMapping",
+                    classes = @ConstructorResult(
+                        targetClass = ar.com.dinamicaonline.cost_api.dto.DepositMoneyDTO.class,
+                        columns = {
+                            @ColumnResult(name = "id", type = Integer.class),
+                            @ColumnResult(name = "name", type = String.class),
+                            @ColumnResult(name = "depositCommisionPercent", type = double.class),
+                            @ColumnResult(name = "maxDepositCommisionZero", type = double.class),
+                            @ColumnResult(name = "maxDepositCount", type = Integer.class),
+                            @ColumnResult(name = "minDepositAmount", type = double.class),
+                            @ColumnResult(name = "maxDepositAmount", type = double.class),
+                            @ColumnResult(name = "minDepositCommision", type = double.class)}))
+@NamedNativeQuery(name = "ExtractionPlaces.findDepositMoney",
+                resultClass = ar.com.dinamicaonline.cost_api.dto.DepositMoneyDTO.class,
+                resultSetMapping = "depositMoneyDTOMapping",
+                query = "SELECT id,name,depositCommisionPercent,maxDepositCommisionZero,maxDepositCount,minDepositAmount,maxDepositAmount,minDepositCommision FROM api_ExtractionPlaces")
+
+@SqlResultSetMapping(name = "cashWithdrawalDTOMapping",
+                classes = @ConstructorResult(
+                    targetClass = ar.com.dinamicaonline.cost_api.dto.CashWithdrawalDTO.class,
+                    columns = {
+                        @ColumnResult(name = "id", type = Integer.class),
+                        @ColumnResult(name = "name", type = String.class),
+                        @ColumnResult(name = "minExtractionAmount", type = double.class),
+                        @ColumnResult(name = "minExtractionCommision", type = double.class),
+                        @ColumnResult(name = "extractionCommisionPercent", type = double.class),
+                        @ColumnResult(name = "maxExtractionAmount", type = double.class),
+                        @ColumnResult(name = "maxExtractionCommisionZero", type = double.class),
+                        @ColumnResult(name = "maxExtractionCount", type = Integer.class)}))
+@NamedNativeQuery(name = "ExtractionPlaces.findCashWithdrawal",
+            resultClass = ar.com.dinamicaonline.cost_api.dto.CashWithdrawalDTO.class,
+            resultSetMapping = "cashWithdrawalDTOMapping",
+            query = "SELECT id,name,minExtractionAmount,minExtractionCommision,extractionCommisionPercent,maxExtractionAmount,maxExtractionCommisionZero,maxExtractionCount FROM api_ExtractionPlaces")
+
 public class ExtractionPlaces {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -10,7 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import ar.com.dinamicaonline.cost_api.models.ExtractionPlaces;
+import ar.com.dinamicaonline.cost_api.dto.CashWithdrawalDTO;
+import ar.com.dinamicaonline.cost_api.dto.DepositMoneyDTO;
 import ar.com.dinamicaonline.cost_api.repositories.ExtractionPlacesRepository;
 
 
@@ -22,7 +23,7 @@ public class ExtractionPlacesServiceImpl implements ExtractionPlacesService{
 
     @Override
     public ResponseEntity<?> getDepositMoney() {
-        List<ExtractionPlaces> extractionPlaces = extractionPlacesRepository.findExtractionPlaces();
+        List<DepositMoneyDTO> extractionPlaces = extractionPlacesRepository.findDepositMoney();
         List<Map<String, Object>> responseBodyList = new ArrayList<Map<String, Object>>();
         for(int i = 0; i<extractionPlaces.size(); i++){
             Map<String, Object> resBody = new HashMap<>();
@@ -44,7 +45,7 @@ public class ExtractionPlacesServiceImpl implements ExtractionPlacesService{
     
     @Override
     public ResponseEntity<?> getCashWithdrawal() {
-        List<ExtractionPlaces> extractionPlaces = extractionPlacesRepository.findExtractionPlaces();
+        List<CashWithdrawalDTO> extractionPlaces = extractionPlacesRepository.findCashWithdrawal();
         List<Map<String, Object>> responseBodyList = new ArrayList<Map<String, Object>>();
         for(int i = 0; i<extractionPlaces.size(); i++){
             Map<String, Object> resBody = new HashMap<>();

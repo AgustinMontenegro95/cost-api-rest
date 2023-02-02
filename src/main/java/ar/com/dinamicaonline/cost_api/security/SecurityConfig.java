@@ -12,7 +12,9 @@ public class SecurityConfig {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers(new AntPathRequestMatcher("/receiveAndSend")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/v1/cash_withdrawal")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/v1/transfer_money")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/v1/deposit_money")).permitAll()
                         .anyRequest().authenticated())
                 .httpBasic();
         return http.build();

@@ -2,6 +2,7 @@ package ar.com.dinamicaonline.cost_api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,16 +21,19 @@ public class CostController {
     @Autowired
     private ExtractionPlacesService extractionPlacesService;
 
+    @CrossOrigin
     @RequestMapping(value = "/deposit_money", method = RequestMethod.POST)
     public ResponseEntity<?> getDepositMoney(){
         return extractionPlacesService.getDepositMoney();
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/cash_withdrawal", method = RequestMethod.POST)
     public ResponseEntity<?> getCashWithdrawal(){
         return extractionPlacesService.getCashWithdrawal();
     }
 
+    @CrossOrigin
     @PostMapping(value = "/transfer_money")
     public ResponseEntity<?> getTransferMoney(){
         return parameterService.getTransferMoney();

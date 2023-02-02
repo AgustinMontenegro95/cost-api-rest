@@ -8,8 +8,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "api_Parameters")
+@SqlResultSetMapping(name = "transferMoneyDTOMapping",
+                    classes = @ConstructorResult(
+                        targetClass = ar.com.dinamicaonline.cost_api.dto.TransferMoneyDTO.class,
+                        columns = {
+                            @ColumnResult(name = "id", type = Integer.class),
+                            @ColumnResult(name = "parameterName", type = String.class),
+                            @ColumnResult(name = "parameterValue", type = String.class)}))
+@NamedNativeQuery(name = "Parameter.findTransferMoney",
+                resultClass = ar.com.dinamicaonline.cost_api.dto.TransferMoneyDTO.class,
+                resultSetMapping = "transferMoneyDTOMapping",
+                query = "SELECT id, parameterName, parameterValue FROM api_Parameters WHERE  parameterName IN ('TRD_SC_1MAX', 'TRD_SC_MES_MAX_IMPO','TRD_SC_MES_MAX_CANT','TRD_PORCENTAJE','TRD_COSTO_MINIMO','TRE_SC_1MAX','TRE_SC_MES_MAX_IMPO','TRE_SC_MES_MAX_CANT','TRE_PORCENTAJE','TRE_COSTO_MINIMO')")
 public class Parameter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
